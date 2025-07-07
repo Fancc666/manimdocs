@@ -52,12 +52,12 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: htmlfiles
+          name: github-pages
           path: './build/html'
 
   deploy-site:
     environment:
-      name: htmlfiles
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build-site
